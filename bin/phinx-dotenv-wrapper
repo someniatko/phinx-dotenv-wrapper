@@ -4,7 +4,7 @@
 use Symfony\Component\Dotenv\Dotenv;
 
 foreach ([
-    __DIR__ . '/../../../vendor', // relative to vendor/someniatko/phinx-dotenv-wrapper/
+    __DIR__ . '/../../../../vendor', // relative to vendor/someniatko/phinx-dotenv-wrapper/
     __DIR__ . '/../../vendor', // relative to vendor/bin/
     __DIR__ . '/../vendor', // relative to bin/ if testing this binary standalone 
 ] as $vendorDir) {
@@ -13,10 +13,10 @@ foreach ([
     }
 }
 
-require_once $vendorDir.'/autoload.php';
+require_once realpath($vendorDir).'/autoload.php';
 
 if (!isset($_SERVER['DB_HOST'])) {
-    (new Dotenv)->load(__DIR__.'/../.env');
+    (new Dotenv)->load(realpath($vendorDir).'/../.env');
 }
 
 require $vendorDir.'/robmorgan/phinx/bin/phinx';
