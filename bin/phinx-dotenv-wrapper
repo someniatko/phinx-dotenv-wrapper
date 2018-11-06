@@ -16,7 +16,7 @@ foreach ([
 require_once realpath($vendorDir).'/autoload.php';
 
 if (!isset($_SERVER['DB_HOST'])) {
-    (new Dotenv)->load(realpath($vendorDir).'/../.env');
+    (new Dotenv)->load(realpath($vendorDir.'/../.env'));
 }
 
-require $vendorDir.'/robmorgan/phinx/bin/phinx';
+require realpath($vendorDir).'/robmorgan/phinx/bin/phinx';
