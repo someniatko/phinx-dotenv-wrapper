@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Dotenv\Dotenv;
+
+foreach ([
+    __DIR__ . '/../../vendor',
+    __DIR__ . '/../vendor',
+] as $vendorDir) {
+    if (is_dir($vendorDir)) {
+        break;
+    }
+}
+
+require_once $vendorDir.'/autoload.php';
+
+if (!isset($_SERVER['DB_HOST'])) {
+    (new Dotenv)->load(__DIR__.'/../.env');
+}
+
+require $vendorDir.'/robmorgan/phinx/bin/phinx';

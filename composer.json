@@ -1,0 +1,13 @@
+{
+    "name": "someniatko/phinx-dotenv-wrapper",
+    "description": "Wrapper over phinx binary with added support for .env file",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "robmorgan/phinx": "*",
+        "symfony/dotenv": "^4.1"
+    },
+    "bin": [
+        "bin/phinx-dotenv-wrapper"
+    ]
+}
