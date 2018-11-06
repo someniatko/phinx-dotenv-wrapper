@@ -4,8 +4,9 @@
 use Symfony\Component\Dotenv\Dotenv;
 
 foreach ([
-    __DIR__ . '/../../vendor',
-    __DIR__ . '/../vendor',
+    __DIR__ . '/../../../vendor', // relative to vendor/someniatko/phinx-dotenv-wrapper/
+    __DIR__ . '/../../vendor', // relative to vendor/bin/
+    __DIR__ . '/../vendor', // relative to bin/ if testing this binary standalone 
 ] as $vendorDir) {
     if (is_dir($vendorDir)) {
         break;
